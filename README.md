@@ -1,2 +1,2 @@
-# SPOJ and CodeChef-30-days-challenge
+# Daily-challenge
 This is a compilation of my exercises in C language
