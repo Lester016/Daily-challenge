@@ -26,7 +26,8 @@ public class Main {
 
             // Terminate the program if it encounters the character "g".
             if (input.contains("g")) {
-                System.out.println(input.substring(0, input.indexOf("g"))); // The character that follows the g won't be appended.
+                System.out.println("'g' found at index:" + (input.indexOf("g") + 1));
+                System.out.println(input.substring(0, input.indexOf("g")+1)); // The character that follows the g won't be appended.
                 break;
             }
             System.out.println(input);
