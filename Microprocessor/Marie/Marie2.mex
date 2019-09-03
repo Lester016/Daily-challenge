@@ -1,0 +1,24 @@
+// convert the C program to Marie code.
+// c = (a++) + 5 - (b--);
+
+input
+store a
+input
+store b
+load a
+add d
+add e
+store a
+load b
+subt d
+store b
+load a
+subt b
+store c
+output
+Halt
+a, Dec 0
+b, Dec 0
+c, Dec 0
+d, Dec 1
+e, Dec 5
