@@ -1,0 +1,19 @@
+// convert this is C program to Marie code.
+// w = x - y + z;
+
+input
+store x
+input
+store y
+input
+store z
+load x
+subt y
+add z
+store w
+output
+Halt
+w, Hex 0123
+x, Hex 0123
+y, Hex FFE9
+z, Hex 0000
