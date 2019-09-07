@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// Write a C program to input two numbers from user find LCM (Lowest Common Multiple) using loop.
+
+int main()
+{
+    int n1, n2, minMultiple;
+    printf("Input number1: ");
+    scanf("%d", &n1);
+    printf("Input number2: ");
+    scanf("%d", &n2);
+    // maximum number between n1 and n2 is stored in minMultiple
+    minMultiple = (n1>n2) ? n1 : n2;
+    // Always true
+    while(1)
+    {
+        if( minMultiple%n1==0 && minMultiple%n2==0 )
+        {
+            printf("LCM = %d.", minMultiple);
+            break;
+        }
+        ++minMultiple;
+    }
+    return 0;
+}
