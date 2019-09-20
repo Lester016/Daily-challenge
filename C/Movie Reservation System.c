@@ -91,7 +91,7 @@ void menu(struct Node **n, int menuChoiced) {
             break;
         case 5:
             printf("Movie Dequeued\n");
-            dequeueMovie();
+            dequeueMovie(*n);
             break;
     }
 }
