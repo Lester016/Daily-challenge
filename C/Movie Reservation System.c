@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+// Movie's Struct
 struct Node {
     int movieCode;
     char movieTitle[100];
@@ -10,9 +11,6 @@ struct Node {
     struct Node *next;
 };
 
-void insertMovie(struct Node **n, int movieCode, char movieTitle[], char showingDate[], int ticketAmount) {
-
-}
 
 void listMovie(struct Node *n) {
     while (n->movieCode != 0) {
@@ -24,6 +22,21 @@ void listMovie(struct Node *n) {
         n = n->next;
     }
 };
+
+void dequeueMovie(struct Node *head) {
+    struct Node *temp;
+    if (head == NULL) {
+        printf("List is already empty.");
+    } else {
+        temp = head;
+        head = head->next;
+
+        free(temp);
+        printf("New Head %s\n", head->movieTitle);
+        printf("%s\n", temp);
+        printf("Succesfully Dequeued!");
+    }
+}
 
 void lineRemove(char str[]) {
     int len;
@@ -65,15 +78,20 @@ void menu(struct Node **n, int menuChoiced) {
             newNode->next = (*n);
             *n = newNode;
             break;
+
         case 2:
+            printf("");
             break;
         case 3:
             printf("\n\t\t\t\tMovie Lists\n\n");
             listMovie(*n);
             break;
         case 4:
+            printf("Display all customers\n");
             break;
         case 5:
+            printf("Movie Dequeued\n");
+            dequeueMovie();
             break;
     }
 }
