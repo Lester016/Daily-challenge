@@ -3,7 +3,7 @@
 #include <string.h>
 #define MAX 100
 #define USERNAME "admin"
-#define PASSWORD "0000"
+#define PASSWORD "admin123"
 
 
 //For Queueing
