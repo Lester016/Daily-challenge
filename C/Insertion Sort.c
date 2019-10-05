@@ -10,6 +10,7 @@ int main()
                 temp = myArray[j];
                 myArray[j] = myArray[i];
                 myArray[i] = temp;
+                continue;
             }
         }
     }
