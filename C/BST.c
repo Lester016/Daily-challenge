@@ -32,9 +32,6 @@ void print(struct node *root) {
     }
 }
 
-
-
-
 /* A utility function to insert a new node with given key in BST */
 struct node *insert(struct node *node, int key) {
     /* If the tree is empty, return a new node */
@@ -73,4 +70,3 @@ int main() {
     print(root);
     return 0;
 }
-
