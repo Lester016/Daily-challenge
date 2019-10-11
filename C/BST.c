@@ -1,4 +1,3 @@
-
 // C program to demonstrate insert operation in binary search tree
 #include<stdio.h>
 #include<stdlib.h>
@@ -16,20 +15,21 @@ struct node *newNode(int item) {
     return temp;
 }
 
-void printLeft(struct node *root) {
-        while (root->left != NULL || root->key != 0) {
-            root = root->left;
-            printf(" LEFT: %d \n", root->key);
+void print(struct node *root) {
+    if (root->key != 0) {
+        if (root->left != NULL) {
+            printf("LEFT \t:\t %d\n", root->left->key);
         }
 
-}
+        if (root->right != NULL) {
+            printf("RIGHT \t:\t %d\n", root->right->key);
+        } else {
+            printf("RIGHT \t:\t %d\n", root->key);
+        }
 
-void printRight(struct node *root) {
-    while (root->right != NULL || root->key != 0) {
-        root = root->right;
-        printf(" RIGHT: %d \n", root->key);
+        print(root->left);
+        print(root->right);
     }
-
 }
 
 /* A utility function to insert a new node with given key in BST */
@@ -51,23 +51,22 @@ struct node *insert(struct node *node, int key) {
 
 // Driver Program to test above functions
 int main() {
-    /* Let us create following BST
-              50
-           /     \
-          30      70
-         /  \    /  \
-       20   40  60   80 */
-    struct node *root = NULL;
-    root = insert(root, 20);
-    insert(root, 17);
-    insert(root, 25);
-    insert(root, 15);
-    insert(root, 10);
-    insert(root, 12);
-    insert(root, 16);
-    insert(root, 17);
+    int inputRoot, input;
+    char con;
 
-    printRight(root);
+    struct node *root = NULL;
+    printf("Input Root : ");
+    scanf("%d", &inputRoot);
+    root = insert(root, inputRoot);
+    do {
+        printf("Input Child : ");
+        scanf("%d", &input);
+        insert(root, input);
+        printf("Do you want to continue [Y]/[N]: ");
+        scanf(" %c", &con);
+    } while (con == 'y' || con == 'Y');
+
+    printf("ROOT \t:\t %d\n", root->key);
+    print(root);
     return 0;
 }
-
