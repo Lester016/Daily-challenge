@@ -1,19 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
-    int myArray[8] = {4, 3, 2, 10, 12, 1, 5, 6}, i, j, k, temp, z;
-    for(i = 0; i <= 7; i++){
-        for(j = 0; j < i; j++){
-            if(myArray[i] < myArray[j]){
-                temp = myArray[j];
-                myArray[j] = myArray[i];
-                myArray[i] = temp;
-            }
-        }
+int main() {
+    printf("Insertion Sort\n");
+    int arr[] = {4, 3, 5, 6, 12, 2, 1, 8};
+    int arrSize = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Given array: ");
+    for (int l = 0; l < arrSize; ++l) {
+        printf("%d ", arr[l]);
     }
-    for(k = 0; k < i; k++){
-          printf("%d ", myArray[k]);
+    
+    // Insertion algorithm.
+    for (int i = 1; i < arrSize; ++i) {
+        for(int j = i; j > 0; j--) { 
+            if(arr[j - 1] > arr[j]){
+                int temp = arr[j];
+                arr[j] = arr[j - 1]; 
+                arr[j - 1] = temp; 
+             }
+         }
+    }
+
+    printf("\nSorted array: ");
+    for (int k = 0; k < arrSize; ++k) {
+        printf("%d ", arr[k]);
     }
 }
