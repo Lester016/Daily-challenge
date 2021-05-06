@@ -21,7 +21,7 @@ def response(message=""):
         "Your": "my",
         "your": "my",
         "yours": "mine",
-        "Yours": "mine",
+        "mine": "yours",
         "you're": "I'm",
     }
 
