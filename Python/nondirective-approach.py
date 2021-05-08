@@ -9,6 +9,9 @@ history = []
 
 def response(message=""):
 
+    if message == 'quit':
+        return
+
     pronouns = {
         "I": "you",
         "me": "you",
@@ -66,9 +69,7 @@ def response(message=""):
             temp_rand = randint(0, len(qualifier) + len(hedge))
 
         history.append(temp_rand)
-
-    print(history)
-
+    
     current_number = history[len(history) - 1]
 
     # If latest history is 1, use qualifier.
